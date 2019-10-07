@@ -1,0 +1,16 @@
+//password is "qwerty" in comment
+
+result = base.Find_Inputs();
+
+result.Add(All.FindByName("Person.getCreditNo") +
+All.FindAllReferences(All.FindDefinition(All.FindByName("Person.getCreditNo"))) +
+All.FindAllReferences(All.FindByName("Person.getCreditNo"))+ 
+All.FindByMemberAccess("Person.getCreditNo"));
+
+
+result = base.Find_XSS_Sanitize();
+
+result.Add(All.FindByName("Security.validate") +
+All.FindAllReferences(All.FindDefinition(All.FindByName("Security.validate"))) +
+All.FindAllReferences(All.FindByName("Security.validate"))+ 
+All.FindByMemberAccess("Security.validate"));
